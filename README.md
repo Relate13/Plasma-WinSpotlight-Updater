@@ -15,6 +15,12 @@ Use the following command to install mono on Ubuntu:
 sudo apt install mono-complete
 ```
 
+Use the following command to install mono on Arch Linux:
+
+```bash
+sudo pacman -Syu mono
+```
+
 If you are using a different distribution, refer to the [mono website](https://www.mono-project.com/download/stable/) for installation instructions.
 
 **install-Spotlight-DL.sh**:
@@ -28,7 +34,7 @@ If you are using a different distribution, refer to the [mono website](https://w
 1. Clone the repository to your preferred directory:
 
 ```bash
-git clone <repository-url>
+git clone git@github.com:Relate13/Plasma-WinSpotlight-Updater.git
 ```
 
 2. Navigate to the repository directory:

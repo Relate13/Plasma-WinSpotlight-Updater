@@ -6,6 +6,18 @@ cd "$SCRIPT_DIR" || {
     exit 1
 }
 
+# Copyright Statement
+echo "--------------------------------------------------------------------------------------"
+echo "This script downloads and uses the ORelio/Spotlight-Downloader."
+echo "The project is licensed under the CDDL-1.0 license."
+echo "Please ensure compliance with the terms of this license."
+echo -e "Copyright information can be found at: \033[1;34mhttps://github.com/ORelio/Spotlight-Downloader\033[0m"
+echo "--------------------------------------------------------------------------------------"
+
+sleep 2
+
+SCRIPT_DIR=$(dirname "$(realpath "$0")")
+
 # Download the latest version of Spotlight-DL
 download_url=$(curl -s https://api.github.com/repos/ORelio/Spotlight-Downloader/releases/latest | grep "browser_download_url.*zip" | cut -d : -f 2,3 | tr -d \")
 if [ -z "$download_url" ]; then

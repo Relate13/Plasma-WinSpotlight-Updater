@@ -8,7 +8,7 @@ if command -v qdbus &> /dev/null; then
 elif command -v qdbus6 &> /dev/null; then
     QDBUS_CMD="qdbus6"
 else
-    echo "Error: could not find qdbus or kdbus6 command"
+    echo "Error: could not find qdbus or qdbus6 command"
     exit 1
 fi
 

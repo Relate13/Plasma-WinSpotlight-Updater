@@ -2,6 +2,15 @@
 WALLPAPER_CACHE=~/SpotlightWallpapers # Directory to store downloaded wallpapers
 CACHE_NUM=10 # Maximum wallpapers to keep
 
+# Check current plasma version
+if command -v qdbus &> /dev/null; then
+    QDBUS_CMD="qdbus"
+elif command -v qdbus6 &> /dev/null; then
+    QDBUS_CMD="qdbus6"
+else
+    echo "Error: could not find qdbus or kdbus6 command"
+    exit 1
+fi
 
 SCRIPT_DIR=$(dirname "$(realpath "$0")")
 cd "$SCRIPT_DIR" || {
@@ -40,7 +49,7 @@ wallpaper_path=$(realpath "$wallpaper_path")
 echo "New wallpaper saved at $wallpaper_path"
 
 # Set the new wallpaper in KDE Plasma
-qdbus org.kde.plasmashell /PlasmaShell org.kde.PlasmaShell.evaluateScript "
+$QDBUS_CMD org.kde.plasmashell /PlasmaShell org.kde.PlasmaShell.evaluateScript "
     var allDesktops = desktops();
     for (i=0;i<allDesktops.length;i++)
     {

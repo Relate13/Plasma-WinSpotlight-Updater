@@ -34,7 +34,7 @@ If you are using a different distribution, refer to the [mono website](https://w
 1. Clone the repository to your preferred directory:
 
 ```bash
-git clone git@github.com:Relate13/Plasma-WinSpotlight-Updater.git
+git clone https://github.com/Relate13/Plasma-WinSpotlight-Updater.git
 ```
 
 2. Navigate to the repository directory:
